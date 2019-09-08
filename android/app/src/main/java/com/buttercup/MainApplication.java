@@ -9,7 +9,8 @@ import com.facebook.react.bridge.JavaScriptExecutorFactory;
 
 import com.buttercup.autofill.AutoFillPackage;
 import com.facebook.react.ReactApplication;
-import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import com.actionsheet.ActionSheetPackage;
+// import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.oblador.keychain.KeychainPackage;
 import li.yunqi.rnsecurestorage.RNSecureStoragePackage;
 import com.rnfingerprint.FingerprintAuthPackage;
@@ -37,7 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
             @SuppressWarnings("UnnecessaryLocalVariable")
             List<ReactPackage> packages = new PackageList(this).getPackages();
             // Packages that cannot be autolinked yet can be added manually here, for example:
-            packages.add(new RNGoogleSigninPackage());
+            // packages.add(new RNGoogleSigninPackage());
             packages.add(new KeychainPackage());
             packages.add(new RNSecureStoragePackage());
             packages.add(new FingerprintAuthPackage());
