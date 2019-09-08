@@ -1,6 +1,11 @@
 package com.buttercup;
 
 import android.app.Application;
+import android.util.Log;
+
+import com.facebook.react.PackageList;
+import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
+import com.facebook.react.bridge.JavaScriptExecutorFactory;
 
 import com.buttercup.autofill.AutoFillPackage;
 import com.facebook.react.ReactApplication;
@@ -29,18 +34,19 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected List<ReactPackage> getPackages() {
-            return Arrays.<ReactPackage>asList(
-                new MainReactPackage(),
-                new RNGoogleSigninPackage(),
-                new KeychainPackage(),
-                new RNSecureStoragePackage(),
-                new FingerprintAuthPackage(),
-                new RandomBytesPackage(),
-                new ActionSheetPackage(),
-                new VectorIconsPackage(),
-                new CryptoPackage(),
-                new AutoFillPackage()
-            );
+            @SuppressWarnings("UnnecessaryLocalVariable")
+            List<ReactPackage> packages = new PackageList(this).getPackages();
+            // Packages that cannot be autolinked yet can be added manually here, for example:
+            packages.add(new RNGoogleSigninPackage());
+            packages.add(new KeychainPackage());
+            packages.add(new RNSecureStoragePackage());
+            packages.add(new FingerprintAuthPackage());
+            packages.add(new RandomBytesPackage());
+            packages.add(new ActionSheetPackage());
+            packages.add(new VectorIconsPackage());
+            packages.add(new CryptoPackage());
+            packages.add(new AutoFillPackage());
+            return packages;
         }
     };
 
